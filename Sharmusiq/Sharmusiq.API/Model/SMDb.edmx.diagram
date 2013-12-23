@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="398e4a2645b848a48a5286d2fca22284" Name="Diagram1" ZoomLevel="92" >
+        <EntityTypeShape EntityType="SMDb.User" Width="1.625" PointX="7.25" PointY="3.75" IsExpanded="true" FillColor="Gray" />
+        <EntityTypeShape EntityType="SMDb.Track" Width="1.625" PointX="5.375" PointY="0.625" IsExpanded="true" FillColor="192, 0, 0" />
+        <EntityTypeShape EntityType="SMDb.ShareRequest" Width="1.5" PointX="8.375" PointY="0.5" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="SMDb.ShareResponse" Width="1.5" PointX="12" PointY="0.5" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="SMDb.UserRoles" Width="1.5" PointX="5.125" PointY="4.375" FillColor="64, 64, 64" />
+        <EntityTypeShape EntityType="SMDb.Role" Width="1.5" PointX="3.125" PointY="4.375" IsExpanded="true" FillColor="Gray" />
+        <AssociationConnector Association="SMDb.UserUserRoles" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="SMDb.RoleUserRoles" />
+        <EntityTypeShape EntityType="SMDb.TrackFeature" Width="1.5" PointX="10" PointY="2.5" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="SMDb.Producer" Width="1.625" PointX="12" PointY="4.875" FillColor="192, 0, 0" />
+        <InheritanceConnector EntityType="SMDb.Producer" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="SMDb.Artist" Width="1.625" PointX="12" PointY="2.875" IsExpanded="true" FillColor="192, 0, 0" />
+        <InheritanceConnector EntityType="SMDb.Artist" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="SMDb.Venue" Width="1.625" PointX="9.25" PointY="5.875" IsExpanded="true" FillColor="192, 0, 0" />
+        <InheritanceConnector EntityType="SMDb.Venue" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <AssociationConnector Association="SMDb.TrackTrackFeature" />
+        <AssociationConnector Association="SMDb.TrackShareRequest" />
+        <AssociationConnector Association="SMDb.UserShareRequest" />
+        <AssociationConnector Association="SMDb.ShareRequestShareResponse" />
+        <EntityTypeShape EntityType="SMDb.Permission" Width="1.5" PointX="3.125" PointY="0.875" />
+        <AssociationConnector Association="SMDb.TrackPermission" />
+        <AssociationConnector Association="SMDb.UserPermission" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

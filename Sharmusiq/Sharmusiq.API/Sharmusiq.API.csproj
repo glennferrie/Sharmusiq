@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62AF72A1-3A30-466B-8B0F-A1692C15EA5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sharmusiq.API</RootNamespace>
+    <AssemblyName>Sharmusiq.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs" />
+    <Compile Include="Model\Artist.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Permission.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Producer.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShareRequest.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShareResponse.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SMDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SMDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SMDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Track.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrackFeature.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserRoles.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Venue.cs">
+      <DependentUpon>SMDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\SMDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SMDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SMDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SMDb.Context.cs</LastGenOutput>
+      <DependentUpon>SMDb.edmx</DependentUpon>
+    </None>
+    <None Include="Model\SMDb.edmx.diagram">
+      <DependentUpon>SMDb.edmx</DependentUpon>
+    </None>
+    <None Include="Model\SMDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SMDb.cs</LastGenOutput>
+      <DependentUpon>SMDb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\SMDb.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
